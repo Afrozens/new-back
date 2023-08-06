@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import colors from 'colors';
 import connectDB from './config/db.js';
 import userRoutes from './routes/userRoutes.js';
+import productRoutes from './routes/productRoutes.js';
 import { errorHandler, notFound } from './middleware/errorMiddleware.js';
 
 const __dirname = path.resolve();
@@ -35,7 +36,7 @@ app.use(
 
 // API routes
 app.use('/api/user', userRoutes);
-
+app.use('/api/product', productRoutes)
 // Middleware
 app.use(notFound);
 app.use(errorHandler);
